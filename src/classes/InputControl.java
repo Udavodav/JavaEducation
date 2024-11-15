@@ -15,11 +15,7 @@ public class InputControl {
                         " and underline. Password and confirm password must be equals");
             }
         }
-        catch (WrongLoginException e) {
-            System.out.println(e.getMessage());
-            return false;
-        }
-        catch (WrongPasswordException e) {
+        catch (WrongLoginException | WrongPasswordException e) {
             System.out.println(e.getMessage());
             return false;
         }
