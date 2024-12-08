@@ -44,7 +44,6 @@ public class MyCustomTestSelenide {
     }
 
     @Test(dataProvider = "login")
-    @Parameters({"login", "password"})
     public void gosuslugi_login_fail_test(String login, String password) {
         open("/");
         $x("//button[contains(@class, 'login-button')]")
