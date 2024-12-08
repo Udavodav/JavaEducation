@@ -1,15 +1,22 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import classes.Coordinates;
+import classes.Descriminant;
+import classes.DivideNumerable;
+import classes.Point;
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Point<Integer> pointInt = new Point<>();
+        pointInt.setCoord(10, 20);
+        System.out.println("Координата X: " + pointInt.getCoord(Coordinates.COORD_X));
+        System.out.println("Координата Y: " + pointInt.getCoord(Coordinates.COORD_Y));
+
+        DivideNumerable<Integer> isDivided = x -> x % 13 == 0;
+        System.out.println(isDivided.divide(52));
+        System.out.println(isDivided.divide(72));
+
+        Descriminant desc = (x, y, z) -> y*y - 4*x*z;
+        System.out.println(desc.calculate(3, 3, 1.25));
+        System.out.println(desc.calculate(10.8, 17.5, 6));
     }
 }
